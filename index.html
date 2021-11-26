@@ -1,5 +1,26 @@
+<html>
+<head>
+  <title>To-Do List</title>
+  <div class="header">
+    <h1>To-Do List</h1>
+    <input type="text" id="taskName" placeholder="Task Name">
+    <span onclick="newTask()" class="newTaskBtn">+</span>
+  </div>
+</head>
+<body>
+  <ul id="taskList">
+  </ul>
+</body>
+</html>
 
 <script>
+  // make item checked when clicked on
+  var tasks = document.querySelector('ul');
+  tasks.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
   // Add new task when clicking the + button
   function newTask() {
     var li = document.createElement("li");
@@ -28,23 +49,6 @@
 
 </script>
 
-<html>
-<head>
-  <title>To-Do List</title>
-  <div class="header">
-    <h1>To-Do List</h1>
-    <input type="text" id="taskName" placeholder="Task Name">
-    <span onclick="newTask()" class="newTaskBtn">+</span>
-  </div>
-</head>
-<body>
-  <ul id="taskList">
-  </ul>
-</body>
-</html>
-
-
-
 <style>
   * {
     box-sizing: border-box;
@@ -65,7 +69,7 @@
   }
 
   ul li.checked {
-    background: #99ff99;
+    background: #666666;
     color: #fff;
     text-decoration: line-through;
   }
