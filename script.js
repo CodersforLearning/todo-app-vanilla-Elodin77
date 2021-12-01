@@ -40,6 +40,8 @@ function newTask(update) {
       var j;
       var found = false;
       for (j=0;j<Number(get_cookie(NUM));j++) {
+        alert(get_cookie(j));
+        alert(this.getElementsByClassName("itemName").textContent);
         if (get_cookie(j)==this.getElementsByClassName("itemName").textContent) {
           found = true;
         }
