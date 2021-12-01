@@ -85,8 +85,10 @@ function initialise() {
   check_cookie(NUM,0);
   var i;
   for (i=0;i<Number(get_cookie(NUM));i++) {
-
+    document.getElementById("taskName").value = get_cookie(i);
+    newTask();
   }
+  document.getElementById("taskName").value = "";
 }
 
 initialise();
