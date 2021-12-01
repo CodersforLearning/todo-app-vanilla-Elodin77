@@ -18,7 +18,7 @@ function newTask(update) {
   var name = document.getElementById("taskName").value;
   var span = document.createElement("SPAN");
   var txt = document.createTextNode(name);
-  span.setAttribute("id","itemName");a
+  span.setAttribute("id","itemName");
   span.appendChild(txt);
   li.appendChild(span);
   document.getElementById("taskList").appendChild(li);
