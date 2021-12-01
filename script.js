@@ -18,7 +18,7 @@ function newTask(update) {
   var name = document.getElementById("taskName").value;
   var span = document.createElement("SPAN");
   var txt = document.createTextNode(name);
-  span.className = "itemName";
+  span.setAttribute("id","itemName");a
   span.appendChild(txt);
   li.appendChild(span);
   document.getElementById("taskList").appendChild(li);
@@ -41,8 +41,8 @@ function newTask(update) {
       var found = false;
       for (j=0;j<Number(get_cookie(NUM));j++) {
         alert(get_cookie(j));
-        alert(this.getElementsByClassName("itemName").textContent);
-        if (get_cookie(j)==this.getElementsByClassName("itemName").textContent) {
+        alert(this.getElementById("itemName").textContent);
+        if (get_cookie(j)==this.getElementById("itemName").textContent) {
           found = true;
         }
         if (found) {
