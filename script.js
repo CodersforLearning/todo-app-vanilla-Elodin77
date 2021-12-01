@@ -51,8 +51,8 @@ function newTask(update) {
     }
   }
   if (update) {
-    set_cookie(NUM,Number(get_cookie(NUM))+1);
     set_cookie(Number(get_cookie(NUM)),name);
+    set_cookie(NUM,Number(get_cookie(NUM))+1);
   }
 }
 
