@@ -14,13 +14,15 @@ function newTask() {
 
   var li = document.createElement("li");
   var name = document.getElementById("taskName").value;
+  var span = document.createElement("SPAN");
   var txt = document.createTextNode(name);
-  txt.setAttribute("id","itemName");
-  li.appendChild(txt);
+  span.className = "itemName";
+  span.appendChild(txt);
+  li.appendChild(span);
   document.getElementById("taskList").appendChild(li);
 
   // add finish button
-  var span = document.createElement("SPAN")
+  var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7"); // multiply sign
   span.className = "finish"; // finish button
   span.appendChild(txt);
@@ -36,7 +38,7 @@ function newTask() {
       var j;
       var found = false;
       for (j=0;j<Number(get_cookie(NUM));j++) {
-        if (get_cookie(j)==this.getElementById("itemName").value) {
+        if (get_cookie(j)==this.getElementsByClassName("itemName").value) {
           found = true;
         }
         if (found) {
