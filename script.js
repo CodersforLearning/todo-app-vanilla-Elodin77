@@ -9,9 +9,11 @@ tasks.addEventListener('click', function(ev) {
 }, false);
 
 // Add new task when clicking the + button
-function newTask() {
-  // update cookies
+function newTask(update) {
+  // update param determines whether or not to change cookies
+  a = typeof a !== 'undefined' ? a : true;
 
+  // update cookies
   var li = document.createElement("li");
   var name = document.getElementById("taskName").value;
   var span = document.createElement("SPAN");
@@ -48,9 +50,10 @@ function newTask() {
       set_cookie(NUM,Number(get_cookie(NUM))-1);
     }
   }
-
-  set_cookie(NUM,Number(get_cookie(NUM))+1);
-  set_cookie(Number(get_cookie(NUM)),name);
+  if (update) {
+    set_cookie(NUM,Number(get_cookie(NUM))+1);
+    set_cookie(Number(get_cookie(NUM)),name);
+  }
 }
 
 // Cookies
@@ -62,7 +65,6 @@ function set_cookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 function get_cookie(cname) {
-  alert(cname)
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
@@ -89,7 +91,7 @@ function initialise() {
   var i;
   for (i=0;i<Number(get_cookie(NUM));i++) {
     document.getElementById("taskName").value = get_cookie(i);
-    newTask();
+    newTask(false);
   }
   document.getElementById("taskName").value = "";
 }
