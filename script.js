@@ -1,5 +1,5 @@
 // Constants
-var NUM = "numTasks";
+var NUM = "_numTasks";
 // make item checked when clicked on
 var tasks = document.querySelector('ul');
 tasks.addEventListener('click', function(ev) {
