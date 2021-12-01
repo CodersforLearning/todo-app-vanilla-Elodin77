@@ -11,7 +11,7 @@ tasks.addEventListener('click', function(ev) {
 // Add new task when clicking the + button
 function newTask(update) {
   // update param determines whether or not to change cookies
-  a = typeof a !== 'undefined' ? a : true;
+  update = typeof update !== 'undefined' ? update : true;
 
   // update cookies
   var li = document.createElement("li");
